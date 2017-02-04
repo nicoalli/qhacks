@@ -7,9 +7,12 @@ body{
     min-height: 100%;
     margin: 0;
     overflow: hidden;
-    background-image: url("background2.jpg");
-    background-size: cover;
+    background-size: 1224px 768px;
     background-repeat: no-repeat;
+    z-index: -1;
+    /*background-image: url("background2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;*/
 }
 
 main {

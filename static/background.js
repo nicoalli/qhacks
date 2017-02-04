@@ -1,0 +1,32 @@
+var now = new Date();
+var hours = now.getHours();
+var psj=0;
+//document.write('<style type="text/css">')
+
+//Night: 0:00 - 5:00am
+if (hours > 0 && hours < 5){
+    document.body.style.backgroundImage = "url('https://attachment.outlook.office.net/owa/SoulaineT@hotmail.com/service.svc/s/GetFileAttachment?id=AQMkADAwATY0MDABLThmY2YtNThhNC0wMAItMDAKAEYAAANQQ7lcEeKrRJ0n2zwF826BBwBPga7fcEPSSZxspjg1KQXEAAACAQkAAABPga7fcEPSSZxspjg1KQXEAAAAYHWU9AAAAAESABAATgMsEMTL70uxivoRFNByEA%3D%3D&X-OWA-CANARY=4GErDYxuOEi3isO8iJ6dW1A_2mtATdQYc8NM9r8kiILSFVp-U8Ji6K8JoC7K_yiUyObY0DxMDjY.&token=24ef8b3a-c3d4-4dd7-9e80-b91faf620b96&owa=outlook.live.com&isc=1.jpg')";
+}
+
+
+//Morning: 5:01am-10:00am
+else if (hours > 5 && hours <= 10){
+    document.body.style.backgroundImage = "url('https://attachment.outlook.office.net/owa/SoulaineT@hotmail.com/service.svc/s/GetFileAttachment?id=AQMkADAwATY0MDABLThmY2YtNThhNC0wMAItMDAKAEYAAANQQ7lcEeKrRJ0n2zwF826BBwBPga7fcEPSSZxspjg1KQXEAAACAQkAAABPga7fcEPSSZxspjg1KQXEAAAAYHWU9AAAAAESABAAt5qnb%2FlIy02tKaeEhABaVHM%3D&X-OWA-CANARY=4GErDYxuOEi3isO8iJ6dW1A_2mtATdQYc8NM9r8kiILSFVp-U8Ji6K8JoC7K_yiUyObY0DxMDjY.&token=24ef8b3a-c3d4-4dd7-9e80-b91faf620b96&owa=outlook.live.com&isc=1.jpg')";
+
+}
+
+//Sunset: 6:00pm - 8:59pm
+else if (hours >= 18 && hours < 21){
+    document.body.style.backgroundImage = "url('https://attachment.outlook.office.net/owa/SoulaineT@hotmail.com/service.svc/s/GetFileAttachment?id=AQMkADAwATY0MDABLThmY2YtNThhNC0wMAItMDAKAEYAAANQQ7lcEeKrRJ0n2zwF826BBwBPga7fcEPSSZxspjg1KQXEAAACAQkAAABPga7fcEPSSZxspjg1KQXEAAAAYHWU9AAAAAESABAA5EUzbw3U2kaQYwvaRSFADA%3D%3D&X-OWA-CANARY=C8EdQatClkmgND4vJe0xK2DY_mxATdQY2LkAzVCoVp4kk30S0vbMRTGP9vutUMkt9bpTyaRQ87s.&token=3116f289-067a-4725-9bc7-40bb73591840&owa=outlook.live.com&isc=1.jpg')";
+
+}
+
+//Night 9pm - 11:59pm (Yes I'm sure you could put this in the same conditional as up top)
+else if (hours >= 21 && hours < 24){
+    document.body.style.backgroundImage = "url('https://attachment.outlook.office.net/owa/SoulaineT@hotmail.com/service.svc/s/GetFileAttachment?id=AQMkADAwATY0MDABLThmY2YtNThhNC0wMAItMDAKAEYAAANQQ7lcEeKrRJ0n2zwF826BBwBPga7fcEPSSZxspjg1KQXEAAACAQkAAABPga7fcEPSSZxspjg1KQXEAAAAYHWU9AAAAAESABAATgMsEMTL70uxivoRFNByEA%3D%3D&X-OWA-CANARY=4GErDYxuOEi3isO8iJ6dW1A_2mtATdQYc8NM9r8kiILSFVp-U8Ji6K8JoC7K_yiUyObY0DxMDjY.&token=24ef8b3a-c3d4-4dd7-9e80-b91faf620b96&owa=outlook.live.com&isc=1')";
+}
+
+//Day: 10:01am-5:59pm; Everything else
+else {
+    document.body.style.backgroundImage = "url('https://attachment.outlook.office.net/owa/SoulaineT@hotmail.com/service.svc/s/GetFileAttachment?id=AQMkADAwATY0MDABLThmY2YtNThhNC0wMAItMDAKAEYAAANQQ7lcEeKrRJ0n2zwF826BBwBPga7fcEPSSZxspjg1KQXEAAACAQkAAABPga7fcEPSSZxspjg1KQXEAAAAYHWU9AAAAAESABAAAURiWH3lvkuILIWvYMW%2Fnw%3D%3D&X-OWA-CANARY=4GErDYxuOEi3isO8iJ6dW1A_2mtATdQYc8NM9r8kiILSFVp-U8Ji6K8JoC7K_yiUyObY0DxMDjY.&token=24ef8b3a-c3d4-4dd7-9e80-b91faf620b96&owa=outlook.live.com&isc=1.jpg')";
+}

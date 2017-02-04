@@ -37,6 +37,10 @@ def showsettings():
 def showqsettings():
     return render_template('question.html')
 
+@app.route('/showhelp')
+def showhelp():
+    return render_template('help.html')
+
 #@app.route("/getuser")
 #def loogedIn():
 #    _name = request.args.get('name')
