@@ -29,6 +29,14 @@ def home(username="", qid=1):
 def showQuotes():
     return render_template('quotes.html')
 
+@app.route('/showgsettings')
+def showsettings():
+    return render_template('general.html')
+
+@app.route('/showqsettings')
+def showqsettings():
+    return render_template('question.html')
+
 #@app.route("/getuser")
 #def loogedIn():
 #    _name = request.args.get('name')
