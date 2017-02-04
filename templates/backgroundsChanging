@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<! This code sets the background based off of the time of day>
+<!-- This code sets the background based off of the time of day-->
 
 <html>
 <body>
 
-<! set background dimentions>
+<!-- set background dimentions-->
 <style>
 body {
     background-size: 1224px 768px;
@@ -13,9 +13,9 @@ body {
 
 </style>
 
-<! Based on time of day, determine background>
+<!-- Based on time of day, determine background-->
 <script type="text/javascript">
-<!--
+
 	// Declare variables
 
         var now = new Date();
@@ -51,7 +51,6 @@ body {
 		document.body.style.backgroundImage = "url('https://attachment.outlook.office.net/owa/SoulaineT@hotmail.com/service.svc/s/GetFileAttachment?id=AQMkADAwATY0MDABLThmY2YtNThhNC0wMAItMDAKAEYAAANQQ7lcEeKrRJ0n2zwF826BBwBPga7fcEPSSZxspjg1KQXEAAACAQkAAABPga7fcEPSSZxspjg1KQXEAAAAYHWU9AAAAAESABAAAURiWH3lvkuILIWvYMW%2Fnw%3D%3D&X-OWA-CANARY=4GErDYxuOEi3isO8iJ6dW1A_2mtATdQYc8NM9r8kiILSFVp-U8Ji6K8JoC7K_yiUyObY0DxMDjY.&token=24ef8b3a-c3d4-4dd7-9e80-b91faf620b96&owa=outlook.live.com&isc=1.jpg')";
  	}      
         
-//-->
 </script>
 
 </body>
