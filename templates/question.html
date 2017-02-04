@@ -3,8 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <title>Daily Question</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function (){
+            $('#btnSubmit').click(function(){
+                $.ajax({
+                    url: '/getquestion',
+                    data: $('form').serialize(),
+                    type: 'POST',
+                    success: function(response){
+                        console.log(response);
+                    },
+                    error: function(error){
+                        console.log(error);
+                    }
+                });
+            });
+        });
+    </script>
 </head>
 <body>
+    <form id="cat" action="/getquestion" method="post">
+        <label>Category</label>
+        <input type="text" name="category">
 
+        <button type="submit" id="btnSubmit">Submit</button>
+    </form>
 </body>
 </html>

@@ -1,5 +1,6 @@
-from flask import Flask, render_template, request, flash redirect, session, abort
+from flask import Flask, render_template, request, flash, redirect, session, abort
 from flaskext.mysql import MySQL
+import os
 
 mysql = MySQL()
 app = Flask(__name__)
@@ -9,11 +10,22 @@ app.config['MYSQL_DATABASE_DB'] = 'qhacks'
 app.config['MYSQL_DATABASE_HOST'] = 'localhost'
 mysql.init_app(app)
 
-@app.route("/")
-def main():
-    return render_template('signup.html')
+@app.route('/')
+def home(username="", qid=1):
+    if not session.get('logged_in'):
+        return render_template('login.html')
+    else:
+        name = username
 
-@app.route("/index")
+        conn = mysql.connect()
+        cursor = conn.cursor()
+
+        cursor.execute("SELECT question FROM questions WHERE id=" + str(qid[0]))
+        question = str(cursor.fetchone()[0])
+        
+        return render_template('index.html', name=name, question=question)
+
+@app.route("/getuser")
 def loogedIn():
     _name = request.args.get('name')
     conn = mysql.connect()
@@ -27,7 +39,7 @@ def loogedIn():
     
     return render_template('index.html', name=name, question=question)
 
-@app.route("/question", methods=['POST'])
+@app.route("/getquestion", methods=['POST'])
 def dispay_question():
     _category = request.form['category']
 
@@ -37,7 +49,7 @@ def dispay_question():
     cursor.execute("SELECT question FROM questions WHERE category='" + _category + "'")
     data = cursor.fetchall()
 
-    return render_template('question.html', question=data)
+    return render_template('showquestions.html', question=data)
 
 @app.route("/save", methods=['POST'])
 def save_settings():
@@ -68,25 +80,25 @@ def signUp():
         return "Error"
     else:
         return "Success"
-    
-    
-@app.route('/')
-def home():
-    if not session.get('logged_in'):
-        return render_template('login.html')
-    else:
-        return render_template('index.html')
                                
 @app.route('/login', methods=['POST'])
-def do_admin_login():          
+def do_admin_login():
+    username = request.form['username']
+    qid = 1
     if request.form['password'] == 'password' and request.form['username'] == 'qhacks':
+        conn = mysql.connect()
+        cursor = conn.cursor()
+
+        cursor.execute("SELECT question FROM users WHERE name='" + username + "'")
+        result = cursor.fetchone()
+
         session['logged_in'] = True
     else:
         flash('wrong password!')
-    return home()
+    return home(username, result)
 
 
  
 if __name__ == "__main__":
     app.secret_key = os.urandom(12)
-    app.run(debug=True,host='0.0.0.0', port=4000)
+    app.run()
