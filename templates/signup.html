@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function (){
+            var form = $('#signUpForm');
+            $('#btnSignUp').click(function(){
+                $.ajax({
+                    url: 'http://127.0.0.1:5000/signup',
+                    data: form.serialize(),
+                    type: 'POST',
+                    success: function(response){
+                        console.log(response);
+                    },
+                    error: function(error){
+                        console.log(error);
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <form id="signUpForm">
+        <label>Name</label>
+        <input type="text" name="name">
+
+        <button type="submit" id="btnSignUp">Sign Up</button>
+    </form>
+</body>
+</html>
