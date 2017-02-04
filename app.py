@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, flash redirect, session, abort
+from flask import Flask, render_template, request, flash, redirect, session, abort
 from flaskext.mysql import MySQL
 
 mysql = MySQL()
