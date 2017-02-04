@@ -7,12 +7,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script>
         $(document).ready(function (){
-            var form = $('#signUpForm');
             $('#btnSignUp').click(function(){
                 $.ajax({
-                    url: 'http://127.0.0.1:5000/signup',
-                    data: form.serialize(),
-                    type: 'POST',
+                    url: '/signup',
+                    data: $('form').serialize(),
+                    type: 'GET',
                     success: function(response){
                         console.log(response);
                     },
@@ -25,7 +24,7 @@
     </script>
 </head>
 <body>
-    <form id="signUpForm">
+    <form id="signUpForm" action="/signup" method="post">
         <label>Name</label>
         <input type="text" name="name">
 
