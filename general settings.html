@@ -1,0 +1,109 @@
+<!DOCTYPE HTML>
+
+<style>
+
+.dropbtn {
+    color: transparent;
+    padding: 0px;
+
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    min-width: 150px;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    font-family: Verdana, Geneva, sans-serif;
+    color: grey;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: transparent;}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: transparent;
+}
+
+.generalTitle {
+	position: absolute;
+	left: 63px;
+	text-align: center;
+	top: 2%;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 28px;
+	color: black;
+	text-align: center;
+}
+
+
+.name {
+	position: absolute;
+    left: 0px;
+    top: 44%;
+    width: 100%;
+    text-align: center;
+    font-size: 30px;
+    font-family: Verdana, Geneva, sans-serif;
+    color: black;
+}
+
+
+.email {
+	position: absolute;
+	left: 0px;
+	top: 48%;
+	width: 100%;
+	text-align: center;
+    font-family: Verdana, Geneva, sans-serif;
+    color: grey;
+    font-size: 16px;
+}
+
+
+.userpicture {
+	position: absolute;
+	left: 0px;
+	top: 30%;
+    width: 100%;
+    text-align: center;
+}
+</style>
+
+
+<html>
+<body>
+
+	<div class="dropdown" style="float:left;">
+  	<button class="dropbtn"><img src="http://www.iconsdb.com/icons/preview/black/settings-5-xxl.png" style="width: 45px; height: 45px"></button>
+  	<div class="dropdown-content">
+    	<a href="general settings.html">General</a>
+    	<a href="dailyquestions.html">Daily Question</a>
+    	<a href="quotes.html">Quotes</a>
+    	<a href="help.html">Help</a>
+
+  	</div>
+	</div>
+
+	<div class = "generalTitle">General Settings</div>
+	<div class = "userpicture"><img src="http://www.piedpiper.com/app/themes/pied-piper/dist/images/jared.png" style="width: 100px; height: 100px"></div>
+	<div class = "name">user's name</div><br>
+	<div class = "email">user@email.com</div><br>
+
+</body>
+</html>
