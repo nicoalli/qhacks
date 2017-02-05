@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+
+var views = 27	//Sets number of views (to test)
+
+// Create image objects 
+var tree1 = document.createElement('img'); 	// create an image element
+tree1.src = 'https://github.com/nicoalli/qhacks/blob/master/tree1seed.png?raw=true.jpg'; 	// Tree 1: Seed
+
+var tree2 = document.createElement('img'); 	
+tree2.src = 'https://github.com/nicoalli/qhacks/blob/master/tree2sapling.png?raw=true.jpg'; 	// Tree 2: Sapling
+
+var tree3 = document.createElement('img'); 	
+tree3.src = 'https://github.com/nicoalli/qhacks/blob/master/tree3bigger.png?raw=true.jpg'; 	// Tree 3: Medium tree
+
+var tree4 = document.createElement('img'); 	
+tree4.src = 'https://github.com/nicoalli/qhacks/blob/master/tree4teen.png?raw=true.jpg'; 	// Tree 4: bigger tree
+
+var tree5 = document.createElement('img'); 	
+tree5.src = 'https://github.com/nicoalli/qhacks/blob/master/tree5grown.png?raw=true.jpg'; 	// Tree 5: Grown tree
+
+var tree6 = document.createElement('img'); 	
+tree6.src = 'https://github.com/nicoalli/qhacks/blob/master/tree6flower.png?raw=true.jpg'; 	// Tree 6: Flowery tree
+
+//Determine which tree should be viewed depending on how many times the user has logged onto the website
+
+if (views < 2){
+	document.body.appendChild(tree1);  // append the image to the body
+    } 
+else if (views >= 2 && views < 6){
+	document.body.appendChild(tree2);
+    }
+else if (views >= 6 && views < 11){
+	document.body.appendChild(tree3);
+    }
+else if (views >= 11 && views <15 ){
+	document.body.appendChild(tree4);
+    }
+else if (views >= 15 && views < 20){
+	document.body.appendChild(tree5);
+     }
+else if(views >= 20){
+	document.body.appendChild(tree6);
+    }
+
+    
+
+</script>
+</body>
+</html>
